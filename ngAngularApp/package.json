@@ -1,0 +1,57 @@
+{
+  "_args": [
+    [
+      "al-shah@1.1.1",
+      "/Users/sandeep/Manoj/tez/tejas/tejas"
+    ]
+  ],
+  "_from": "al-shah",
+  "_id": "al-shah@1.9.7",
+  "_inBundle": false,
+  "_integrity": "sha512-/lby9LRVuJ/7ylcTl6ijNVSgF/a6jihRv74DOstQnAoCPKToF0BZ6H/ABPAqIMxnluAjKKB18s6wQNlyvg7X7Q==",
+  "_location": "/al-shah",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "al-shah",
+    "name": "al-shah",
+    "escapedName": "al-shah",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/al-shah/-/al-shah-1.9.7.tgz",
+  "_shasum": "71bbe606885b3517b60a7efbc871473cde00404f",
+  "_spec": "al-shah",
+  "_where": "F:\\Rekha_Angular\\ngAngularApp",
+  "author": {
+    "name": "Manoj",
+    "email": "ptlmnj89@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/msraosurya/al-shah/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "materializeParallaxTemplate",
+  "homepage": "https://github.com/msraosurya/al-shah#readme",
+  "keywords": [
+    "al-shah"
+  ],
+  "license": "MIT",
+  "main": "index.html",
+  "name": "al-shah",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msraosurya/al-shah.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.9.7"
+}

@@ -1,0 +1,70 @@
+<h1 style="text-align: center;">We have {{ calProd() }} Products...!!</h1>
+
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <ul>
+        <li *ngFor="let obj of object">
+          <div class="col s3 m3">
+            <div class="card">
+              <div class="card-image">
+                <img src="../../../assets/img/sample-1.jpg" />
+                <span class="card-title">{{ obj.model | uppercase }}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"
+                  ><i class="material-icons">add</i></a
+                >
+              </div>
+              <div class="card-content">
+                <div *ngFor="let objs of objects">
+                  <p class="appSimpleStyle">
+                    Id: <b>{{ obj.id }}</b>
+                  </p>
+                </div>
+                <div *ngFor="let objs of objects">
+                  <p [style.color]="objs.pricecolor">
+                    Price: <b>{{ obj.price | currency: "INR" }}</b>
+                  </p>
+                </div>
+                <div *ngFor="let objs of objects">
+                  <p [style.color]="objs.modelcolor">
+                    Name:<b>{{ obj.model | uppercase }}</b>
+                  </p>
+                </div>
+                <!-- <div *ngIf="obj.instock > 0; else outofstock">
+      Stock:<b>{{ obj.instock }}</b>
+    </div>
+    <ng-template #outofstock>Out of stock</ng-template> -->
+                <ng-container
+                  *ngIf="obj.instock != 0; then instock; else outofstock"
+                >
+                </ng-container>
+
+                <ng-template #instock>
+                  <p [style.color]="obj.prodcolor">
+                    <b
+                      >Last <mark>{{ obj.instock }}</mark> parts Available.</b
+                    >
+                  </p>
+                </ng-template>
+
+                <ng-template #outofstock>
+                  <p [style.color]="obj.prodcolor">
+                    <b>Oppss!! Out of stock</b>
+                  </p>
+                </ng-template>
+                <span [ngSwitch]="obj.country" [style.color]="'#e6291b'">
+                  Country:
+                  <img *ngSwitchCase="'Austrelia'" src="" />
+                  <img *ngSwitchCase="'Japan'" src="" />
+                  <img *ngSwitchCase="'India'" src="" />
+                  <img *ngSwitchCase="'China'" src="" />
+                  <img *ngSwitchDefault src="" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
