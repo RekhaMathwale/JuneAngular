@@ -1,14 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
+import { Mobobject } from "./mobpart";
+import { MOBPART } from "./mockdata";
 @Component({
-  selector: 'app-mobpart',
-  templateUrl: './mobpart.component.html',
-  styleUrls: ['./mobpart.component.css']
+  selector: "app-mobpart",
+  templateUrl: "./mobpart.component.html",
+  styleUrls: ["./mobpart.component.css"],
 })
-export class MobpartComponent  {
-
+export class MobpartComponent {
   title = "Hello There!!!";
   array = ["Pune", "Hyd", "Mumbai"];
+  ngOnIt(): void {
+    this.object = MOBPART; //For memory release
+  }
+  // ngOnDestroy(): void {
+  //   //Called once, before the instance is destroyed.
+  //   //Add 'implements OnDestroy' to the class.
+  //   this.Mobobject = MOBPART[];
+  // }
   objects = [
     {
       idcolor: "red",
@@ -17,46 +25,20 @@ export class MobpartComponent  {
       instockcolor: "orange",
     },
   ];
-  object = [
-    {
-      id: 1,
-      price: 1200,
-      model: "Nokia",
-      instock: 10,
-      prodcolor: "orange",
-      country: "Austrelia",
-    },
-    {
-      id: 2,
-      price: 100,
-      model: "RedMI",
-      instock: 5,
-      prodcolor: "orange",
-      country: "Japan",
-    },
-    {
-      id: 3,
-      price: 100,
-      model: "Samsung",
-      instock: 0,
-      prodcolor: "orange",
-      country: "India",
-    },
-    {
-      id: 4,
-      price: 5000,
-      model: "Macromax",
-      instock: 15,
-      prodcolor: "orange",
-      country: "China",
-    },
-  ];
-
+  object: Mobobject[] = MOBPART;
   calProd() {
     let tot = 0;
-    for (let mobPart of this.object) {
-      tot = tot + mobPart.instock;
+    for (let obj of this.object) {
+      tot = tot + obj.instock;
     }
     return tot;
+  }
+  upQuantity(obj) {
+    // alert('We are in upQuantity');
+    if (obj.quantity < obj.instock) obj.quantity++;
+  }
+
+  downQuantity(obj) {
+    if (obj.quantity != 0) obj.quantity--;
   }
 }

@@ -7,8 +7,8 @@
         <li *ngFor="let obj of object">
           <div class="col s3 m3">
             <div class="card">
-              <div class="card-image">
-                <img src="../../../assets/img/sample-1.jpg" />
+              <div class="card-image" [class.clsName]="obj.clsVar">
+                <img src="../../../assets/img/{{ obj.prodImg }}" />
                 <span class="card-title">{{ obj.model | uppercase }}</span>
                 <a class="btn-floating halfway-fab waves-effect waves-light red"
                   ><i class="material-icons">add</i></a
@@ -52,6 +52,24 @@
                     <b>Oppss!! Out of stock</b>
                   </p>
                 </ng-template>
+                <p align="center">
+                  <!-- <button>+</button> -->
+                  <a
+                    class="waves-effect waves-light btn"
+                    (click)="downQuantity(obj)"
+                    ><i class="material-icons">remove</i></a
+                  >
+
+                  {{ obj.quantity }}
+                  <a
+                    class="waves-effect waves-light btn"
+                    (click)="upQuantity(obj)"
+                    ><i class="material-icons">add</i></a
+                  >
+
+                  <!-- <button>-</button> -->
+                </p>
+
                 <span [ngSwitch]="obj.country" [style.color]="'#e6291b'">
                   Country:
                   <img *ngSwitchCase="'Austrelia'" src="" />
