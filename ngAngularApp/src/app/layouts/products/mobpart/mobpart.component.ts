@@ -41,4 +41,9 @@ export class MobpartComponent {
   downQuantity(obj) {
     if (obj.quantity != 0) obj.quantity--;
   }
+  catchVal(eventdata, obj) {
+    console.clear();
+    console.log("We r in event", event);
+    console.log("We r in cachval", eventdata);
+  }
 }

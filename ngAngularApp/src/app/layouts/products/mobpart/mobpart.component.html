@@ -22,12 +22,12 @@
                 </div>
                 <div *ngFor="let objs of objects">
                   <p [style.color]="objs.pricecolor">
-                    Price: <b>{{ obj.price | currency: "INR" }}</b>
+                    Price: <b>{{ obj.price }}</b>
                   </p>
                 </div>
                 <div *ngFor="let objs of objects">
                   <p [style.color]="objs.modelcolor">
-                    Name:<b>{{ obj.model | uppercase }}</b>
+                    Name:<b>{{ obj.model }}</b>
                   </p>
                 </div>
                 <!-- <div *ngIf="obj.instock > 0; else outofstock">
@@ -59,6 +59,23 @@
                     (click)="downQuantity(obj)"
                     ><i class="material-icons">remove</i></a
                   >
+                  <!--imp for step by step ck=hacking of two way dATA BINDING-->
+                  <!-- <input
+                    [value]="obj.quantity"
+                    (input)="catchVal($event.target.value)"
+                    [(ngModel)]="obj.quantity"
+                  /> -->
+                  <input
+                    type="text"
+                    class="number"
+                    [(ngModel)]="obj.quantity"
+                  />
+                  <!-- <input
+                    type="text"
+                    class="number"
+                    [value]="obj.quantity"
+                    (input)="object.quantity = $event.terget.value"
+                  /> -->
 
                   {{ obj.quantity }}
                   <a

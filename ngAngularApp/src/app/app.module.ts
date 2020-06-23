@@ -1,5 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 import { SqrtPipe } from "./pipes/sqrt.pipe";
@@ -12,6 +14,14 @@ import { NavComponent } from "./layouts/nav/nav.component";
 import { ProductsComponent } from "./layouts/products/products.component";
 import { MobpartComponent } from "./layouts/products/mobpart/mobpart.component";
 import { SimpleStyleDirective } from "./directives/simple-style.directive";
+import { PageNotFoundComponent } from "./layouts/page-not-found/page-not-found.component";
+import { HomeComponent } from "./layouts/home/home.component";
+
+const appRoutes: Routes = [
+  { path: "home", component: HomeComponent },
+  { path: "mobile", component: MobpartComponent },
+  { path: "**", component: PageNotFoundComponent },
+];
 
 @NgModule({
   declarations: [
@@ -26,8 +36,10 @@ import { SimpleStyleDirective } from "./directives/simple-style.directive";
     ProductsComponent,
     MobpartComponent,
     SimpleStyleDirective,
+    PageNotFoundComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule], // module : group of logics i,e. takes required logics from browser
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)], // module : group of logics i,e. takes required logics from browser
   bootstrap: [AppComponent], // to run : root compo
 })
 export class AppModule {}
