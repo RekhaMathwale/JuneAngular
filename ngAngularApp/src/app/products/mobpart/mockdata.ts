@@ -1,0 +1,48 @@
+import { Mobobject } from "./mobpart";
+
+export const MOBPART: Mobobject[] = [
+  {
+    id: 1,
+    price: 1200,
+    model: "Nokia",
+    instock: 10,
+    prodcolor: "orange",
+    country: "Austrelia",
+    prodImg: "mob1.png",
+    clsVar: false,
+    quantity: 0,
+  },
+  {
+    id: 2,
+    price: 100,
+    model: "RedMI",
+    instock: 5,
+    prodcolor: "orange",
+    country: "Japan",
+    prodImg: "mob2.png",
+    clsVar: true,
+    quantity: 0,
+  },
+  {
+    id: 3,
+    price: 100,
+    model: "Samsung",
+    instock: 0,
+    prodcolor: "orange",
+    country: "India",
+    prodImg: "mob3.png",
+    clsVar: true,
+    quantity: 0,
+  },
+  {
+    id: 4,
+    price: 5000,
+    model: "Macromax",
+    instock: 15,
+    prodcolor: "orange",
+    country: "China",
+    prodImg: "mob1.png",
+    clsVar: true,
+    quantity: 0,
+  },
+];

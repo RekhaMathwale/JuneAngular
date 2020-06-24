@@ -1,7 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from "./app.component";
 import { SqrtPipe } from "./pipes/sqrt.pipe";
@@ -16,12 +15,10 @@ import { MobpartComponent } from "./layouts/products/mobpart/mobpart.component";
 import { SimpleStyleDirective } from "./directives/simple-style.directive";
 import { PageNotFoundComponent } from "./layouts/page-not-found/page-not-found.component";
 import { HomeComponent } from "./layouts/home/home.component";
-
-const appRoutes: Routes = [
-  { path: "home", component: HomeComponent },
-  { path: "mobile", component: MobpartComponent },
-  { path: "**", component: PageNotFoundComponent },
-];
+import { AppRoutingModule } from "./modules/app-routing.module";
+import { MotoComponent } from './layouts/products/mobpart/moto/moto.component';
+import { SamComponent } from './layouts/products/mobpart/sam/sam.component';
+import { BooksComponent } from './products/books/books.component';
 
 @NgModule({
   declarations: [
@@ -38,8 +35,11 @@ const appRoutes: Routes = [
     SimpleStyleDirective,
     PageNotFoundComponent,
     HomeComponent,
+    MotoComponent,
+    SamComponent,
+    BooksComponent,
   ],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)], // module : group of logics i,e. takes required logics from browser
+  imports: [BrowserModule, FormsModule, AppRoutingModule], // module : group of logics i,e. takes required logics from browser
   bootstrap: [AppComponent], // to run : root compo
 })
 export class AppModule {}
